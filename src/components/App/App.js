@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Aside from '../Aside/Aside';
+import CategoriesContainer from '../CategoriesContainer/CategoriesContainer'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+    this.state= {
+      data: [],
+      favorites: []
+    }
+  }
+  render() {
+    return(
+      <main className="App">
+        <h1>Swapi Box</h1>
+        <Aside />
+        <CategoriesContainer />
+
+      </main>
+    )
+  }
 }
 
 export default App;
