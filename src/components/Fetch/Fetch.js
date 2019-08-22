@@ -17,7 +17,7 @@ class Fetch extends Component {
     const combined = { 'people': [], 'planets': [], 'vehicles': [] }
 
     Promise.all([people, planets, vehicles])
-      .then(function (values) {
+      .then((values) => {
         combined['people'] = values[0];
         combined['planets'] = values[1];
         combined['vehicles'] = values[2];
@@ -32,7 +32,7 @@ class Fetch extends Component {
 
   render() {
     return (
-      <div>{this.state.people.map(person => <h3>{person.name}</h3>)}</div>
+      <div>{this.state.people.map(person => <h3 key={person.url}>{person.name}</h3>)}</div>
     )
   }
 }
