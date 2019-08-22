@@ -1,8 +1,12 @@
 import React from 'react';
 import '../CategoryCard/CategoryCard.css'
 
-const CategoryCard = () => {
-    return <h1>hello category card</h1>
+const CategoryCard = ({name}) => {
+    return (
+      <div>
+        <h3 className="Card">{name}</h3>
+      </div>
+    )
 }
 
 export default CategoryCard;

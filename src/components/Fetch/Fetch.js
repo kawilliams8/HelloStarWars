@@ -1,4 +1,6 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import CategoriesContainer from '../CategoriesContainer/CategoriesContainer'
+import { Route, NavLink } from 'react-router-dom';
 
 class Fetch extends Component {
   constructor(props) {
@@ -32,7 +34,16 @@ class Fetch extends Component {
 
   render() {
     return (
-      <div>{this.state.people.map(person => <h3 key={person.url}>{person.name}</h3>)}</div>
+      <>
+        <nav className="navContainer">
+          <NavLink to="/people" className="nav"><button>PEOPLE</button></NavLink>
+          <NavLink to="/vehicles" className="nav"><button>VEHICLES</button></NavLink>
+          <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
+        </nav>
+        <Route path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
+        <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
+        <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
+      </>
     )
   }
 }

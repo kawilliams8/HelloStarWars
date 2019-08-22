@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Aside from './Aside';
+import Film from './Film';
 
-describe('Aside', () => {
+describe('Film', () => {
   it('', () => {
 
   });

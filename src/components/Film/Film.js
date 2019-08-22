@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import '../Aside/Aside.css'
+import './Film.css'
 
-class Aside extends Component {
+class Film extends Component {
     constructor(){
         super()
         this.state= {
@@ -21,14 +21,14 @@ class Aside extends Component {
         
         }
         render() {
-        return(
-            <>
-            <h2>{this.state.film.title}</h2>
-            <h2>{this.state.film.release_date}</h2>
-            <h2>{this.state.film.opening_crawl}</h2>
-            </>
+        return (
+            <aside>
+                <h2>{this.state.film.title}</h2>
+                <h2>{this.state.film.release_date}</h2>
+                <h2>{this.state.film.opening_crawl}</h2>
+            </aside>
         )
     }
 }
 
-export default Aside;
+export default Film;
