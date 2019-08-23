@@ -14,9 +14,18 @@ class Fetch extends Component {
   }
 
   componentDidMount() {
-    const people = fetch('https://swapi.co/api/people/').then(response => response.json());
-    const planets = fetch('https://swapi.co/api/planets/').then(response => response.json());
-    const vehicles = fetch('https://swapi.co/api/vehicles/').then(response => response.json());
+    const people = fetch('https://swapi.co/api/people/')
+    .then(response => response.json())
+    .then(data => this.fetchSpecies(data) && this.fetchPlanets(data))
+    .then(result => this.setState({people : result}))
+    .catch(error => console.log(error));
+
+    const planets = fetch('https://swapi.co/api/planets/')
+    .then(response => response.json());
+
+    const vehicles = fetch('https://swapi.co/api/vehicles/')
+    .then(response => response.json());
+
     const combined = { 'people': [], 'planets': [], 'vehicles': [] }
 
     Promise.all([people, planets, vehicles])
@@ -26,11 +35,34 @@ class Fetch extends Component {
         combined['vehicles'] = values[2];
         return combined;
       })
-      .then(combined => this.setState({
-        people: combined.people.results,
-        vehicles: combined.vehicles.results,
-        planets: combined.planets.results
-      }))
+      // .then(combined => console.log(combined))
+      // .then(combined => this.setState({
+        // people: combined.results
+        // vehicles: combined.vehicles.results,
+        // planets: combined.planets.results
+      // }))
+  }
+
+  fetchSpecies(people) {
+    const promises = people.results.map(person => {
+      return fetch(person.species)
+      .then(response => response.json())
+      .then(data => ({...person, homeworld: data.name, species: data.name}))
+      .catch(error => console.log(error))
+    });
+    console.log('species promises', Promise.all(promises))
+    return Promise.all(promises);
+  }
+
+  fetchPlanets(people) {
+    const promises = people.results.map(person => {
+      return fetch(person.homeworld)
+        .then(response => response.json())
+        .then(data => ({...person, homeworld: data.name}))
+        .catch(error => console.log(error))
+    });
+    console.log('planets promises', Promise.all(promises))
+    return Promise.all(promises);
   }
 
   render() {

@@ -3,7 +3,7 @@ import '../CategoriesContainer/CategoriesContainer.css';
 import CategoryCard from '../CategoryCard/CategoryCard';
 
 const CategoriesContainer = ({ data }) => {
-  console.log('date', data)
+  console.log('people', data)
   const displayCards = data.map(card => <CategoryCard 
     key={card.url} 
     name={card.name} 
