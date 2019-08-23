@@ -1,0 +1,4 @@
+.categoriesContainer {
+    display: grid;
+    grid-template-columns: 365px 365px 365px 365px;
+}

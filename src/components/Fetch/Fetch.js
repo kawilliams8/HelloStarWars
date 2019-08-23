@@ -8,7 +8,8 @@ class Fetch extends Component {
     this.state = {
       people: [],
       vehicles : [],
-      planets: []
+      planets: [],
+      favorites: [{name: 'KATIE'}]
     }
   }
 
@@ -39,10 +40,12 @@ class Fetch extends Component {
           <NavLink to="/people" className="nav"><button>PEOPLE</button></NavLink>
           <NavLink to="/vehicles" className="nav"><button>VEHICLES</button></NavLink>
           <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
+          <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
         </nav>
         <Route path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
         <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
         <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
+        <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} />} />
       </>
     )
   }
