@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import CategoriesContainer from '../CategoriesContainer/CategoriesContainer'
-import { Route, NavLink } from 'react-router-dom';
+import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import App from '../App/App';
 
 class Fetch extends Component {
   constructor(props) {
@@ -69,15 +70,19 @@ class Fetch extends Component {
     return (
       <>
         <nav className="navContainer">
+      <Router>
           <NavLink to="/people" className="nav"><button>PEOPLE</button></NavLink>
           <NavLink to="/vehicles" className="nav"><button>VEHICLES</button></NavLink>
           <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
           <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
+      </Router>
         </nav>
-        <Route path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
-        <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
-        <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
-        <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} />} />
+        <Router>
+          <Route exact path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
+          <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
+          <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
+          <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} />} />
+        </Router>
       </>
     )
   }
