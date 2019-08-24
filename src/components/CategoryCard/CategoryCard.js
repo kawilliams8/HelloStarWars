@@ -3,7 +3,7 @@ import '../CategoryCard/CategoryCard.css'
 
 const CategoryCard = ( props ) => {
   const { name } = props
-  const { homeworld, species, population } = props
+  const { homeworld, species, population} = props
   const { model, vehicle_class, passengers } = props
   const { terrain, climate, residents } = props
     return (
@@ -22,8 +22,9 @@ const CategoryCard = ( props ) => {
           
           {terrain && <li>{terrain}</li>}
           {climate && <li>{climate}</li>}
-          {residents && <li>{residents}</li>}
-
+          {residents && <ul>{(residents.map(resident => {
+            return <li>{resident}</li>
+            }))}</ul>}
         </ul>
         <footer>
           <button>FAV</button>

@@ -14,55 +14,63 @@ class Fetch extends Component {
   }
 
   componentDidMount() {
-    const people = fetch('https://swapi.co/api/people/')
+    fetch('https://swapi.co/api/people/')
     .then(response => response.json())
-    .then(data => this.fetchSpecies(data) && this.fetchPlanets(data))
+    .then(data1 => this.fetchSpecies(data1))
+    .then(data2 => this.fetchPlanets(data2))
     .then(result => this.setState({people : result}))
     .catch(error => console.log(error));
 
-    const planets = fetch('https://swapi.co/api/planets/')
-    .then(response => response.json());
+    fetch('https://swapi.co/api/planets/')
+    .then(response => response.json())
+    .then(data => this.fetchResidents(data.results))
+    .then(result => this.setState({planets: result}))
+    .catch(error => console.log(error))
 
-    const vehicles = fetch('https://swapi.co/api/vehicles/')
-    .then(response => response.json());
-
-    const combined = { 'people': [], 'planets': [], 'vehicles': [] }
-
-    Promise.all([people, planets, vehicles])
-      .then((values) => {
-        combined['people'] = values[0];
-        combined['planets'] = values[1];
-        combined['vehicles'] = values[2];
-        return combined;
-      })
-      // .then(combined => console.log(combined))
-      // .then(combined => this.setState({
-        // people: combined.results
-        // vehicles: combined.vehicles.results,
-        // planets: combined.planets.results
-      // }))
+    fetch('https://swapi.co/api/vehicles/')
+    .then(response => response.json())
+    .then(result => this.setState({vehicles : result.results}))
+    .catch(error => console.log(error))
   }
 
   fetchSpecies(people) {
     const promises = people.results.map(person => {
       return fetch(person.species)
       .then(response => response.json())
-      .then(data => ({...person, homeworld: data.name, species: data.name}))
+      .then(data => ({...person, species: data.name}))
       .catch(error => console.log(error))
-    });
-    console.log('species promises', Promise.all(promises))
-    return Promise.all(promises);
+    })
+    return Promise.all(promises)
   }
 
   fetchPlanets(people) {
-    const promises = people.results.map(person => {
+    const promises = people.map(person => {
       return fetch(person.homeworld)
         .then(response => response.json())
-        .then(data => ({...person, homeworld: data.name}))
+        .then(data => ({...person, homeworld: data.name, population: data.population}))
         .catch(error => console.log(error))
     });
-    console.log('planets promises', Promise.all(promises))
     return Promise.all(promises);
+  }
+
+  fetchResidents(data) {
+    const planets = data.map(planet => {
+      let array = [];
+      planet.residents.forEach(resident => {
+        return fetch(resident)
+        .then(response => response.json())
+        .then(data => array.push(data.name))
+      });
+
+      return {
+        name: planet.name,
+        terrain: planet.terrain,
+        population: planet.population,
+        climate: planet.climate,
+        resident: array
+      };
+    });
+    return planets;
   }
 
   render() {
@@ -74,7 +82,7 @@ class Fetch extends Component {
           <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
           <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
         </nav>
-        <Route path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
+        <Route path='/people' render={() => <CategoriesContainer data={this.state.people} moreData={this.state.planets}  />} />
         <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
         <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
         <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} />} />
