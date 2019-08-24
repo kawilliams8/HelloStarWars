@@ -60,17 +60,19 @@ describe('CategoryCard', () => {
       expect(wrapper).toMatchSnapshot()
   });
 
-  it('should call the toggleFavorite method with the Card\'s id when clicked', () => {
+  it('should call the toggleFavorite method with the Card\'s name, type when clicked', () => {
     const toggleFavoriteMock = jest.fn();
     const wrapper = shallow(<CategoryCard
       id={3}
       name="Luke Skywalker"
+      type="people"
       isFavorite={true}
       toggleFavorite={toggleFavoriteMock}
     />)
 
     wrapper.find('button').simulate('click');
     expect(toggleFavoriteMock).toHaveBeenCalled();
-    expect(toggleFavoriteMock).toHaveBeenCalledWith(3);
+    expect(toggleFavoriteMock).toHaveBeenCalledWith("Luke Skywalker", "people");
   });
+
 });

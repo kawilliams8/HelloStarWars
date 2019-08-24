@@ -21,7 +21,9 @@ exports[`CategoryCard should match the snapshot 1`] = `
     </li>
   </ul>
   <footer>
-    <button>
+    <button
+      onClick={[Function]}
+    >
       FAV
     </button>
   </footer>
@@ -44,7 +46,9 @@ exports[`CategoryCard should match the snapshot 2`] = `
     </li>
   </ul>
   <footer>
-    <button>
+    <button
+      onClick={[Function]}
+    >
       FAV
     </button>
   </footer>
@@ -69,7 +73,9 @@ exports[`CategoryCard should match the snapshot 3`] = `
     </li>
   </ul>
   <footer>
-    <button>
+    <button
+      onClick={[Function]}
+    >
       FAV
     </button>
   </footer>

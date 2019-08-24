@@ -80,7 +80,7 @@ class Fetch extends Component {
     if(!this.state.favorites.some(item => item.name === name)) {
       const {favorites} = this.state;
       const foundElement = this.state[type].find(item => item.name === name)
-      this.setState({favorites: [...favorites,foundElement]})
+      this.setState({favorites: [...favorites, foundElement]})
     } else {
       const nonMatchingElements = this.state.favorites.filter(item => item.name !== name)
       this.setState({favorites: nonMatchingElements})
@@ -88,7 +88,6 @@ class Fetch extends Component {
   }
 
   render() {
-    console.log('state',this.state.favorites)
     return (
       <>
         <Router>

@@ -11,9 +11,19 @@ import Fetch from './Fetch';
       );
       expect(component.find(Fetch)).toHaveLength(1);
     });
-    
+
     it('should match snapshot', () => {
       const wrapper = shallow(<Fetch/>)
-      expect(wrapper).toMatchSnapshot()
+      expect(wrapper).toMatchSnapshot();
     });
+
+    it.skip('should update state as favorites are toggled', () => {
+      const wrapper = shallow(<Fetch />);
+      const mockFavorite = {name: "Luke Skywalker", type: "people", other: 'thing'};
+      const expected = [mockFavorite];
+
+      wrapper.instance().toggleFavorite("Luke Skywalker", "people");
+      expect(wrapper.state('favorites')).toEqual(expected);
+    });
+
   });
