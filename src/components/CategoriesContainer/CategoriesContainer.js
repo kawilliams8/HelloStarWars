@@ -3,8 +3,8 @@ import '../CategoriesContainer/CategoriesContainer.css';
 import CategoryCard from '../CategoryCard/CategoryCard';
 
 const CategoriesContainer = ({ data }) => {
-  const displayCards = data.map(card => <CategoryCard 
-    key={card.url} 
+  const displayCards = data.map((card, index) => <CategoryCard 
+    key={index} 
     name={card.name} 
     homeworld= {card.homeworld} 
     species={card.species} 

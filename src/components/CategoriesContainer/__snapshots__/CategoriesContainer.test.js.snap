@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoriesContainer should match snapshot 1`] = `
+<article
+  className="categoriesContainer"
+>
+  <CategoryCard
+    key="0"
+    name="Luke Skywalker"
+  />
+  <CategoryCard
+    key="1"
+    name="Darth Vader"
+  />
+</article>
+`;
+
+exports[`CategoriesContainer should match snapshot 2`] = `
+<article
+  className="categoriesContainer"
+>
+  <CategoryCard
+    key="0"
+    name="Sand Crawler"
+  />
+  <CategoryCard
+    key="1"
+    name="Snowspeeder"
+  />
+</article>
+`;
+
+exports[`CategoriesContainer should match snapshot 3`] = `
+<article
+  className="categoriesContainer"
+>
+  <CategoryCard
+    key="0"
+    name="Hoth"
+  />
+  <CategoryCard
+    key="1"
+    name="Endor"
+  />
+</article>
+`;
+
+exports[`CategoriesContainer should match snapshot 4`] = `
+<article
+  className="categoriesContainer"
+>
+  <CategoryCard
+    key="0"
+    name="Hoth"
+  />
+  <CategoryCard
+    key="1"
+    name="Luke Skywalker"
+  />
+</article>
+`;

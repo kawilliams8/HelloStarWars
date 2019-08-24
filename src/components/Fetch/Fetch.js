@@ -77,19 +77,17 @@ class Fetch extends Component {
   render() {
     return (
       <>
-        <nav className="navContainer">
-      <Router>
-          <NavLink to="/people" className="nav"><button>PEOPLE</button></NavLink>
-          <NavLink to="/vehicles" className="nav"><button>VEHICLES</button></NavLink>
-          <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
-          <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
-      </Router>
-        </nav>
         <Router>
-          <Route exact path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
-          <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
-          <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
-          <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} />} />
+          <nav className="navContainer">
+            <NavLink to="/people" className="nav"><button>PEOPLE</button></NavLink>
+            <NavLink to="/vehicles" className="nav"><button>VEHICLES</button></NavLink>
+            <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
+            <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
+          </nav>
+            <Route exact path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
+            <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
+            <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
+            <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} />} />
         </Router>
       </>
     )

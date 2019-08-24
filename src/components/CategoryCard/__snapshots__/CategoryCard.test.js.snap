@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryCard should match the snapshot 1`] = `
+<div
+  className="card"
+>
+  <header>
+    <h3>
+      Luke Skywalker
+    </h3>
+  </header>
+  <ul>
+    <li>
+      Tatooine
+    </li>
+    <li>
+      Human
+    </li>
+    <li>
+      200000
+    </li>
+  </ul>
+  <footer>
+    <button>
+      FAV
+    </button>
+  </footer>
+</div>
+`;
+
+exports[`CategoryCard should match the snapshot 2`] = `
+<div
+  className="card"
+>
+  <header>
+    <h3 />
+  </header>
+  <ul>
+    <li>
+      Digger Crawler
+    </li>
+    <li>
+      30
+    </li>
+  </ul>
+  <footer>
+    <button>
+      FAV
+    </button>
+  </footer>
+</div>
+`;
+
+exports[`CategoryCard should match the snapshot 3`] = `
+<div
+  className="card"
+>
+  <header>
+    <h3>
+      Hoth
+    </h3>
+  </header>
+  <ul>
+    <li>
+      tundra, ice cave, mountain ranges
+    </li>
+    <li>
+      frozen
+    </li>
+  </ul>
+  <footer>
+    <button>
+      FAV
+    </button>
+  </footer>
+</div>
+`;

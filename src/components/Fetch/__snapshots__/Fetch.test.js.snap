@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fetch routes using memory router should match snapshot 1`] = `
+<Fragment>
+  <BrowserRouter>
+    <nav
+      className="navContainer"
+    >
+      <NavLink
+        className="nav"
+        to="/people"
+      >
+        <button>
+          PEOPLE
+        </button>
+      </NavLink>
+      <NavLink
+        className="nav"
+        to="/vehicles"
+      >
+        <button>
+          VEHICLES
+        </button>
+      </NavLink>
+      <NavLink
+        className="nav"
+        to="/planets"
+      >
+        <button>
+          PLANETS
+        </button>
+      </NavLink>
+      <NavLink
+        className="nav"
+        to="/favorites"
+      >
+        <button>
+          FAVORITES
+        </button>
+      </NavLink>
+    </nav>
+    <Route
+      exact={true}
+      path="/people"
+      render={[Function]}
+    />
+    <Route
+      path="/vehicles"
+      render={[Function]}
+    />
+    <Route
+      path="/planets"
+      render={[Function]}
+    />
+    <Route
+      path="/favorites"
+      render={[Function]}
+    />
+  </BrowserRouter>
+</Fragment>
+`;

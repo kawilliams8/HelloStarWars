@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Film should match the snapshot 1`] = `
+<aside>
+  <h2 />
+  <h2 />
+  <h2 />
+</aside>
+`;

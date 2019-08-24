@@ -12,5 +12,9 @@ import { Route } from 'react-router-dom';
       </MemoryRouter>
       );
       expect(component.find(Fetch)).toHaveLength(1);
-    })
-  })
+    });
+    it('should match snapshot', () => {
+      const wrapper = shallow(<Fetch/>)
+      expect(wrapper).toMatchSnapshot()
+    });
+  });
