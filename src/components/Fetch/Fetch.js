@@ -9,7 +9,7 @@ class Fetch extends Component {
       people: [],
       vehicles : [],
       planets: [],
-      favorites: [{name: 'Luke Skywalker'}]
+      favorites: []
     }
   }
 
@@ -77,7 +77,17 @@ class Fetch extends Component {
   }
 
   toggleFavorite = (name, type) => {
-    console.log(this.state.favorites.includes({name: [name]}))
+    if(!this.state.favorites.some()) {
+      const {favorites} = this.state;
+      const foundElement = this.state[type].find(item => item.name === name)
+      this.setState({favorites: [...favorites, name, foundElement]})
+    } else {
+      console.log('are we')
+      const nonMatchingElements = this.state.favorites.filter(item => item.name !== name)
+      this.setState({favorites: nonMatchingElements})
+    }
+    
+
     //if the card (with the given name and type) is currently not a favorite
     //then reset state with the new card, too
 
@@ -87,6 +97,7 @@ class Fetch extends Component {
   }
 
   render() {
+    console.log('state',this.state.favorites)
     return (
       <>
         <Router>
