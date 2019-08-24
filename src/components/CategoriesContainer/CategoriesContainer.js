@@ -3,7 +3,6 @@ import '../CategoriesContainer/CategoriesContainer.css';
 import CategoryCard from '../CategoryCard/CategoryCard';
 
 const CategoriesContainer = ({ data }) => {
-  console.log('people', data)
   const displayCards = data.map(card => <CategoryCard 
     key={card.url} 
     name={card.name} 
@@ -15,10 +14,11 @@ const CategoriesContainer = ({ data }) => {
     passengers={card.passengers} 
     terrain={card.terrain} 
     climate={card.climate}
-    residents={card.residents}/>);
+    residents={card.resident}
+    />);
     return (
     <article className= "categoriesContainer">
-        {displayCards}
+      {displayCards}
     </article>
     )
     
