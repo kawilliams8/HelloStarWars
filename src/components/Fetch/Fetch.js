@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import App from '../App/App';
 
 class Fetch extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class Fetch extends Component {
       people: [],
       vehicles : [],
       planets: [],
-      favorites: [{name: 'KATIE'}]
+      favorites: [{name: 'Luke Skywalker'}]
     }
   }
 
@@ -30,7 +29,9 @@ class Fetch extends Component {
 
     fetch('https://swapi.co/api/vehicles/')
     .then(response => response.json())
-    .then(result => this.setState({vehicles : result.results}))
+    .then(response => response.results.map(item => {
+      return {...item, type: "vehicles"}}))
+    .then(result => this.setState({vehicles : result}))
     .catch(error => console.log(error))
   }
 
@@ -38,7 +39,7 @@ class Fetch extends Component {
     const promises = people.results.map(person => {
       return fetch(person.species)
       .then(response => response.json())
-      .then(data => ({...person, species: data.name}))
+      .then(data => ({...person, species: data.name, type: "people"}))
       .catch(error => console.log(error))
     })
     return Promise.all(promises)
@@ -68,10 +69,21 @@ class Fetch extends Component {
         terrain: planet.terrain,
         population: planet.population,
         climate: planet.climate,
-        resident: array
+        resident: array,
+        type: "planets"
       };
     });
     return planets;
+  }
+
+  toggleFavorite = (name, type) => {
+    console.log(this.state.favorites.includes({name: [name]}))
+    //if the card (with the given name and type) is currently not a favorite
+    //then reset state with the new card, too
+
+    //if the card (with the given name and type) is currently a favorite
+    //use the type/key to filter through the right state array
+    //reset state without the card
   }
 
   render() {
@@ -84,10 +96,10 @@ class Fetch extends Component {
             <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
             <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
           </nav>
-            <Route exact path='/people' render={() => <CategoriesContainer data={this.state.people} />} />
-            <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} />} />
-            <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} />} />
-            <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} />} />
+            <Route exact path='/people' render={() => <CategoriesContainer data={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
+          <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
+          <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
+          <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} toggleFavorite={this.toggleFavorite}/>} />
         </Router>
       </>
     )

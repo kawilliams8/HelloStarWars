@@ -21,6 +21,7 @@ describe('CategoryCard', () => {
 
       expect(wrapper).toMatchSnapshot()
   });
+
   it('should match the snapshot', ()=> {
     const card= {model: 'Digger Crawler', class: 'wheeled', passengers: '30'}
     const index= 1;
@@ -38,7 +39,8 @@ describe('CategoryCard', () => {
       residents={card.resident}/>)
 
       expect(wrapper).toMatchSnapshot()
-  })
+  });
+
   it('should match the snapshot', ()=> {
     const card= {name: 'Hoth', terrain: 'tundra, ice cave, mountain ranges', climate: 'frozen', residents: []}
     const index= 1;
@@ -56,5 +58,19 @@ describe('CategoryCard', () => {
       residents={card.resident}/>)
 
       expect(wrapper).toMatchSnapshot()
-  })
+  });
+
+  it('should call the toggleFavorite method with the Card\'s id when clicked', () => {
+    const toggleFavoriteMock = jest.fn();
+    const wrapper = shallow(<CategoryCard
+      id={3}
+      name="Luke Skywalker"
+      isFavorite={true}
+      toggleFavorite={toggleFavoriteMock}
+    />)
+
+    wrapper.find('button').simulate('click');
+    expect(toggleFavoriteMock).toHaveBeenCalled();
+    expect(toggleFavoriteMock).toHaveBeenCalledWith(3);
+  });
 });

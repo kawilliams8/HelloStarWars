@@ -1,25 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './Film.css'
 
 class Film extends Component {
-    constructor(){
+    constructor() {
         super()
-        this.state= {
+        this.state = {
             film: []
         }
     }
     componentDidMount = () => {
-        let randomNumber = Math.floor(Math.random()* 7)
+        let randomNumber = Math.floor(Math.random() * 7)
         fetch('https://swapi.co/api/films')
             .then(response => response.json())
             .then(data => {
-                // console.log('data', data.results[randomNumber])
                 return data;
             })
-            .then(data => this.setState({film: data.results[randomNumber]}))
-        
-        }
-        render() {
+            .then(data => this.setState({ film: data.results[randomNumber] }))
+
+    }
+    render() {
         return (
             <aside>
                 <h2>{this.state.film.title}</h2>

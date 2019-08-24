@@ -2,9 +2,10 @@ import React from 'react';
 import '../CategoriesContainer/CategoriesContainer.css';
 import CategoryCard from '../CategoryCard/CategoryCard';
 
-const CategoriesContainer = ({ data }) => {
-  const displayCards = data.map((card, index) => <CategoryCard 
-    key={index} 
+const CategoriesContainer = ({ data, toggleFavorite }) => {
+  const displayCards = data.map(card => <CategoryCard 
+    key={Date.now()}
+    type={card.type}
     name={card.name} 
     homeworld= {card.homeworld} 
     species={card.species} 
@@ -15,6 +16,7 @@ const CategoriesContainer = ({ data }) => {
     terrain={card.terrain} 
     climate={card.climate}
     residents={card.resident}
+    toggleFavorite={toggleFavorite}
     />);
     return (
     <article className= "categoriesContainer">

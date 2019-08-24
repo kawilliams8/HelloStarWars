@@ -2,10 +2,11 @@ import React from 'react';
 import '../CategoryCard/CategoryCard.css'
 
 const CategoryCard = ( props ) => {
-  const { name } = props
-  const { homeworld, species, population} = props
-  const { model, vehicle_class, passengers } = props
-  const { terrain, climate, residents } = props
+  const { name, type } = props;
+  const { homeworld, species, population} = props;
+  const { model, vehicle_class, passengers } = props;
+  const { terrain, climate, residents } = props;
+  const { toggleFavorite } = props;
     return (
       <div className="card">
         <header>
@@ -27,7 +28,7 @@ const CategoryCard = ( props ) => {
             }))}</ul>}
         </ul>
         <footer>
-          <button>FAV</button>
+          <button onClick={() => toggleFavorite(name, type)}>FAV</button>
         </footer>
 
       </div>
