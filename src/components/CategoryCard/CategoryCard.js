@@ -10,6 +10,7 @@ const CategoryCard = ( props ) => {
   const { toggleFavorite } = props;
     return (
       <div className="card">
+      {console.log('thrice')}
         <header>
         <h3>{name}</h3>
         </header>

@@ -21,10 +21,10 @@ const CategoriesContainer = ({ data, toggleFavorite }) => {
     />);
     return (
     <article className= "categoriesContainer">
+      console.log('deuce')
       {displayCards}
     </article>
     )
-    
 }
 
 export default CategoriesContainer;

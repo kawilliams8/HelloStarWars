@@ -6,12 +6,15 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 class Fetch extends Component {
   constructor(props) {
     super(props)
+    const {checkLoading} = props
+    console.log('is it', props.checkLoading)
     this.state = {
       people: [],
       vehicles : [],
       planets: [],
       favorites: []
     }
+    this.checkLoading = checkLoading.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +22,9 @@ class Fetch extends Component {
     .then(response => response.json())
     .then(data1 => this.fetchSpecies(data1))
     .then(data2 => this.fetchPlanets(data2))
-    .then(result => this.setState({people : result}))
+    .then(result => {
+      this.setState({people : result});
+      this.checkLoading()})
     .catch(error => console.log(error));
 
     fetch('https://swapi.co/api/planets/')
@@ -89,6 +94,7 @@ class Fetch extends Component {
   }
 
   render() {
+    console.log('uno', this.state)
     return (
       <>
         <Router>

@@ -19,6 +19,7 @@ class Film extends Component {
 
     }
     render() {
+        console.log('quatro', this.state)
         return (
             <aside>
                 <h2>{this.state.film.title}</h2>
