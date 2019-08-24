@@ -77,23 +77,14 @@ class Fetch extends Component {
   }
 
   toggleFavorite = (name, type) => {
-    if(!this.state.favorites.some()) {
+    if(!this.state.favorites.some(item => item.name === name)) {
       const {favorites} = this.state;
       const foundElement = this.state[type].find(item => item.name === name)
-      this.setState({favorites: [...favorites, name, foundElement]})
+      this.setState({favorites: [...favorites,foundElement]})
     } else {
-      console.log('are we')
       const nonMatchingElements = this.state.favorites.filter(item => item.name !== name)
       this.setState({favorites: nonMatchingElements})
     }
-    
-
-    //if the card (with the given name and type) is currently not a favorite
-    //then reset state with the new card, too
-
-    //if the card (with the given name and type) is currently a favorite
-    //use the type/key to filter through the right state array
-    //reset state without the card
   }
 
   render() {
