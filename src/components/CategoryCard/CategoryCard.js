@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CategoryCard/CategoryCard.css'
+import PropTypes from 'prop-types'
 
 const CategoryCard = ( props ) => {
   const { name, type } = props;
@@ -36,3 +37,19 @@ const CategoryCard = ( props ) => {
 }
 
 export default CategoryCard;
+
+CategoryCard.propTypes = {
+ climate: PropTypes.string,
+ homeworld: PropTypes.string,
+ model: PropTypes.string,
+ name: PropTypes.string,
+ passenger: PropTypes.number,
+ populations: PropTypes.number,
+ residents: PropTypes.arrayOf(PropTypes.string),
+ species: PropTypes.string,
+ terrain: PropTypes.string,
+ toggleFavorite: PropTypes.func,
+ type: PropTypes.string,
+ vehicle_class: PropTypes.string
+
+}

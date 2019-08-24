@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
+
 class Fetch extends Component {
   constructor(props) {
     super(props)

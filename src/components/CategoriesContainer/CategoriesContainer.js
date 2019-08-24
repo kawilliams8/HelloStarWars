@@ -1,6 +1,7 @@
 import React from 'react';
 import '../CategoriesContainer/CategoriesContainer.css';
 import CategoryCard from '../CategoryCard/CategoryCard';
+import PropTypes from 'prop-types'
 
 const CategoriesContainer = ({ data, toggleFavorite }) => {
   const displayCards = data.map(card => <CategoryCard 
@@ -27,3 +28,8 @@ const CategoriesContainer = ({ data, toggleFavorite }) => {
 }
 
 export default CategoriesContainer;
+
+CategoriesContainer.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
+  toggleFavorite: PropTypes.func
+}
