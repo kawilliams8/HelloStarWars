@@ -22,9 +22,11 @@ class Film extends Component {
     render() {
         return (
             <aside className="filmContainer">
-                <h2>{this.state.film.title}</h2>
-                <h2>{this.state.film.release_date}</h2>
-                <h2>{this.state.film.opening_crawl}</h2>
+                <div className="crawl">
+                <h1>{this.state.film.title}</h1>
+                <p>{this.state.film.release_date}</p>
+                <p>{this.state.film.opening_crawl}</p>
+                </div>
             </aside>
         )
     }
