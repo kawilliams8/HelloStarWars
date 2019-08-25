@@ -7,7 +7,6 @@ class Fetch extends Component {
   constructor(props) {
     super(props)
     const {checkLoading} = props
-    console.log('is it', props.checkLoading)
     this.state = {
       people: [],
       vehicles : [],
@@ -23,21 +22,21 @@ class Fetch extends Component {
     .then(data1 => this.fetchSpecies(data1))
     .then(data2 => this.fetchPlanets(data2))
     .then(result => {
-      this.setState({ people: result }, () => { console.log('people state', this.state) });
+      this.setState({ people: result });
       this.checkLoading()})
     .catch(error => console.log(error));
 
     fetch('https://swapi.co/api/planets/')
     .then(response => response.json())
     .then(data => this.fetchResidents(data.results))
-      .then(result => this.setState({ planets: result }, () => { console.log('planets state', this.state) }))
+      .then(result => this.setState({ planets: result }))
     .catch(error => console.log(error))
 
     fetch('https://swapi.co/api/vehicles/')
     .then(response => response.json())
     .then(response => response.results.map(item => {
       return {...item, type: "vehicles"}}))
-    .then(result => this.setState({vehicles : result}, () => {console.log('vehicles state', this.state)}))
+    .then(result => this.setState({vehicles : result}))
     .catch(error => console.log(error))
   }
 
@@ -93,6 +92,11 @@ class Fetch extends Component {
     }
   }
 
+countFavorites = () => {
+  console.log('count', this.state.favorites.length)
+  return this.state.favorites.length;
+}
+
   render() {
     return (
       <>
@@ -103,10 +107,10 @@ class Fetch extends Component {
             <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
             <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
           </nav>
-          <Route path='/people' render={() => <CategoriesContainer data={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
-          <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
-          <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
-          <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} toggleFavorite={this.toggleFavorite}/>} />
+          <Route path='/people' render={() => <CategoriesContainer data={this.state.people} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
+          <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
+          <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
+          <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
         </Router>
       </>
     )
