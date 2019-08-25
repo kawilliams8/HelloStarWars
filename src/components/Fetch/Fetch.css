@@ -1,0 +1,12 @@
+.navContainer {
+  background-color: red;
+  width: 30%;
+  justify-content: flex-start;
+}
+
+button {
+  display: block;
+  height: 30px;
+  margin: 20px auto;
+  width: 80%;
+}

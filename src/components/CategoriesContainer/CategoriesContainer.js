@@ -1,7 +1,7 @@
 import React from 'react';
 import '../CategoriesContainer/CategoriesContainer.css';
 import CategoryCard from '../CategoryCard/CategoryCard';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const CategoriesContainer = ({ data, toggleFavorite }) => {
   const displayCards = data.map(card => <CategoryCard 
@@ -20,10 +20,16 @@ const CategoriesContainer = ({ data, toggleFavorite }) => {
     toggleFavorite={toggleFavorite}
     />);
     return (
-    <article className= "categoriesContainer">
-      console.log('deuce')
-      {displayCards}
-    </article>
+      <div className="bow">
+        <header className="helloHeader">
+          <h3>Faves</h3>
+          <h1>Swapi Box</h1>
+          <h3>Image</h3>
+        </header>
+        <article className= "categoriesContainer">
+          {displayCards}
+        </article>
+      </div>
     )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import '../CategoryCard/CategoryCard.css'
-import PropTypes from 'prop-types'
+import '../CategoryCard/CategoryCard.css';
+import PropTypes from 'prop-types';
+import '../CategoryCard/CategoryCard.css';
 
 const CategoryCard = ( props ) => {
   const { name, type } = props;
@@ -10,11 +11,10 @@ const CategoryCard = ( props ) => {
   const { toggleFavorite } = props;
     return (
       <div className="card">
-      {console.log('thrice')}
         <header>
         <h3>{name}</h3>
         </header>
-        <ul>
+        <ul className="cardList">
           {homeworld && <li>{homeworld}</li>}
           {species && <li>{species}</li>}
           {population && <li>{population}</li>}
@@ -30,7 +30,7 @@ const CategoryCard = ( props ) => {
             }))}</ul>}
         </ul>
         <footer>
-          <button onClick={() => toggleFavorite(name, type)}>FAV</button>
+          <button className="cardButton" onClick={() => toggleFavorite(name, type)}>FAV</button>
         </footer>
 
       </div>
@@ -40,17 +40,16 @@ const CategoryCard = ( props ) => {
 export default CategoryCard;
 
 CategoryCard.propTypes = {
- climate: PropTypes.string,
- homeworld: PropTypes.string,
- model: PropTypes.string,
- name: PropTypes.string,
- passenger: PropTypes.number,
- populations: PropTypes.number,
- residents: PropTypes.arrayOf(PropTypes.string),
- species: PropTypes.string,
- terrain: PropTypes.string,
- toggleFavorite: PropTypes.func,
- type: PropTypes.string,
- vehicle_class: PropTypes.string
-
+  climate: PropTypes.string,
+  homeworld: PropTypes.string,
+  model: PropTypes.string,
+  name: PropTypes.string,
+  passenger: PropTypes.number,
+  populations: PropTypes.number,
+  residents: PropTypes.arrayOf(PropTypes.string),
+  species: PropTypes.string,
+  terrain: PropTypes.string,
+  toggleFavorite: PropTypes.func,
+  type: PropTypes.string,
+  vehicle_class: PropTypes.string
 }

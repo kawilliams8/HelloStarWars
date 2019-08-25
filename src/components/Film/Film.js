@@ -8,6 +8,7 @@ class Film extends Component {
             film: []
         }
     }
+
     componentDidMount = () => {
         let randomNumber = Math.floor(Math.random() * 7)
         fetch('https://swapi.co/api/films')
@@ -19,9 +20,8 @@ class Film extends Component {
 
     }
     render() {
-        console.log('quatro', this.state)
         return (
-            <aside>
+            <aside className="filmContainer">
                 <h2>{this.state.film.title}</h2>
                 <h2>{this.state.film.release_date}</h2>
                 <h2>{this.state.film.opening_crawl}</h2>

@@ -1,4 +1,19 @@
+.bow {
+    padding: 75px;
+}
+
 .categoriesContainer {
+    background-color: lightblue;
     display: grid;
-    grid-template-columns: 365px 365px 365px 365px;
+    grid-template-columns: 220px 220px 220px 220px;
+    grid-gap: 20px;
+    height: 80%;
+    justify-content: flex-end;
+    overflow: scroll;
+    padding: 50px;
+}
+
+.helloHeader {
+    background-color: pink;
+    display: flex;
 }
