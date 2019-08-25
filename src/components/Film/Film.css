@@ -1,3 +1,39 @@
 .filmContainer {
-  background-color: green;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  overflow:hidden;
+}
+
+.filmContainer {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  perspective: 600px; /* alllows us to transfrom the text 3D, from how wide it comes from the z-angle */
+  color: white;
+  font-size: 400%;
+  letter-spacing: 6px;
+  line-height: 140%;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: -100px; /* makes the text fully off the screen */
+  transform-origin: 50% 100%; /* allows us to change the position of transformed elements */
+  animation: crawl 60s linear; /* plays the crawl for 1 minute */
+}
+
+
+/* we will have to focus on the z index which comes at an angle */
+
+@keyframes crawl {
+   0% { /* this is where the text is closest to the viewer */
+     top: 0; /* this is what makes the text start below the screen */
+     transform: rotateX(40deg) translateZ(0); /* rotating the text 20 degrees but still keeping it closer to the viewer */
+   }
+   100% { /* this is where the tet is far away from the viewer and goes off the screen at the top*/
+     top: -4000px; /* makes sure the text is completely off the screen */
+     transform: rotateX(25deg) translateZ(-2500px); /* moves the text further and further away from the viewer */
+   }
 }

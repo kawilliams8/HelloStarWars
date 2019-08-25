@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink , Switch} from 'react-router-dom';
 import './Fetch.css';
+import Home from '../Home/Home'
 
 class Fetch extends Component {
   constructor(props) {
@@ -102,15 +103,19 @@ countFavorites = () => {
       <>
         <Router>
           <nav className="navContainer">
+            <NavLink to="/" className="nav"><button>HOME</button></NavLink>
             <NavLink to="/people" className="nav"><button>PEOPLE</button></NavLink>
             <NavLink to="/vehicles" className="nav"><button>VEHICLES</button></NavLink>
             <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
             <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
           </nav>
+          <Switch>
+          <Route exact path='/' component={Home} />
           <Route path='/people' render={() => <CategoriesContainer data={this.state.people} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
+          </Switch>
         </Router>
       </>
     )
