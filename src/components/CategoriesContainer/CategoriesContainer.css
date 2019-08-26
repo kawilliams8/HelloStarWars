@@ -1,9 +1,13 @@
+h1 {
+    color: white;
+    font-size: 60px;
+}
+
 .bow {
     padding: 75px;
 }
 
 .categoriesContainer {
-    background-color: lightblue;
     display: grid;
     grid-template-columns: 220px 220px 220px 220px;
     grid-gap: 20px;

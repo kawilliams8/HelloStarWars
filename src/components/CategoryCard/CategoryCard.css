@@ -1,8 +1,14 @@
 .card {
+    background-color: white;
     border: 2px solid black;
-    background-color: papayawhip;
     display: flex;
     flex-direction: column;
+    font-family: 'Dunkin';
+}
+
+.starBackground {
+    background-image: url("../../images/Star.png");
+    border: red 2px solid;
 }
 
 footer {

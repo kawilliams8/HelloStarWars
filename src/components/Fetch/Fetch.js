@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
 import { BrowserRouter as Router, Route, NavLink , Switch} from 'react-router-dom';
 import './Fetch.css';
-import Home from '../Home/Home'
+import Home from '../Home/Home';
+import PrincessLeia from '../../images/PrincessLeia.png';
+import Yoda from '../../images/Yoda.png';
+import Chewbacca from '../../images/Chewbacca.png';
+import DeathStar from '../../images/DeathStar.png';
 
 class Fetch extends Component {
   constructor(props) {
@@ -94,7 +98,6 @@ class Fetch extends Component {
   }
 
 countFavorites = () => {
-  console.log('count', this.state.favorites.length)
   return this.state.favorites.length;
 }
 
@@ -103,14 +106,14 @@ countFavorites = () => {
       <>
         <Router>
           <nav className="navContainer">
-            <NavLink to="/" className="nav"><button>HOME</button></NavLink>
-            <NavLink to="/people" className="nav"><button>PEOPLE</button></NavLink>
-            <NavLink to="/vehicles" className="nav"><button>VEHICLES</button></NavLink>
-            <NavLink to="/planets" className="nav"><button>PLANETS</button></NavLink>
-            <NavLink to='/favorites' className="nav"><button>FAVORITES</button></NavLink>
+            {/* <NavLink to="/" className="nav"><button>HOME</button></NavLink> */}
+            <NavLink to="/people" className="nav"><img className="buttonImages" src={PrincessLeia} alt='Princess Leia' /><button>PEOPLE</button></NavLink>
+            <NavLink to="/vehicles" className="nav"><img className="buttonImages" src={Chewbacca} alt='Chewbacca' /><button>VEHICLES</button></NavLink>
+            <NavLink to="/planets" className="nav"><img className="buttonImages" src={DeathStar} alt='DeathStar' /><button>PLANETS</button></NavLink>
+            <NavLink to='/favorites' className="nav"><img className="buttonImages" src={Yoda} alt='Yoda' /><button>FAVORITES</button></NavLink>
           </nav>
           <Switch>
-          <Route exact path='/' component={Home} />
+          {/* <Route exact path='/' component={Home} /> */}
           <Route path='/people' render={() => <CategoriesContainer data={this.state.people} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
