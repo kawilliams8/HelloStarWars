@@ -22,9 +22,9 @@ const CategoriesContainer = ({ data, toggleFavorite, countFavorites }) => {
 
     return (
       <div className="bow">
-        <h1>Swapi Box</h1>
+        <h1>Hello Star Wars</h1>
         <header className="helloHeader">
-          <h3>Faves {countFavorites()}</h3>
+          <h3>Faves: {countFavorites()}</h3>
           {(countFavorites() <1) && <h3>Add Favorites!</h3>}
           <h3>Image</h3>
         </header>

@@ -1,15 +1,16 @@
 h1 {
     color: white;
-    font-size: 60px;
+    font-size: 75px;
 }
 
 .bow {
-    padding: 75px;
+    padding: 25px 75px;
 }
 
 .categoriesContainer {
+    border-radius: 10px;
     display: grid;
-    grid-template-columns: 220px 220px 220px 220px;
+    grid-template-columns: 210px 210px 210px 210px;
     grid-gap: 20px;
     height: 80%;
     justify-content: flex-end;
@@ -20,4 +21,9 @@ h1 {
 .helloHeader {
     background-color: pink;
     display: flex;
+}
+
+h3 {
+    font-size: 30px;
+    margin: 12px;
 }

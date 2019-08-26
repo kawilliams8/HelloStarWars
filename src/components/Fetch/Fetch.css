@@ -1,12 +1,12 @@
 .navContainer {
-  width: 28%;
+  width: 20%;
   justify-content: flex-start;
 }
 
 .buttonImages {
   height: 130px;
   width: 130px;
-  margin: 1px 100px;
+  margin: 1px 75px;
 }
 
 button {
@@ -17,7 +17,7 @@ button {
   font-size: 18px;
   height: 30px;
   margin: 5px auto;
-  width: 60%;
+  width: 70%;
 }
 
 button:hover {

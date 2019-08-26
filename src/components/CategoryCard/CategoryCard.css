@@ -1,18 +1,33 @@
 .card {
-    background-color: white;
+    background-color: rgba(255,255,255, 0.6);
     border: 2px solid black;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     font-family: 'Dunkin';
 }
 
-.starBackground {
-    background-image: url("../../images/Star.png");
-    border: red 2px solid;
+.star {
+
+}
+
+.cardTitle {
+    font-size: 21px;
+}
+
+.cardList {
+    font-size: 12px;
+    padding-left: 10px;
 }
 
 footer {
     display: inline-block;
+}
+
+.faveHeart {
+    height: 18px;
+    padding-right: 2px;
+    width: 18px;
 }
 
 header, 

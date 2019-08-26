@@ -3,6 +3,7 @@ import '../CategoryCard/CategoryCard.css';
 import PropTypes from 'prop-types';
 import '../CategoryCard/CategoryCard.css';
 import Star from '../../images/Star.png';
+import Heart from '../../images/Heart.png'
 
 const CategoryCard = ( props ) => {
   const { name, type } = props;
@@ -13,27 +14,25 @@ const CategoryCard = ( props ) => {
     return (
       <div className="card">
         <header>
-        <h3>{name}</h3>
+          <h3 className="cardTitle"><img classname="star" src={Star} alt="star" height="21"/>{name}</h3>
         </header>
-        <div className="starBackground">
           <ul className="cardList">
-            {homeworld && <li>{homeworld}</li>}
-            {species && <li>{species}</li>}
-            {population && <li>{population}</li>}
+            {homeworld && <li>Homeworld: {homeworld}</li>}
+            {species && <li>Species: {species}</li>}
+            {population && <li>Population: {population}</li>}
 
-            {model && <li>{model}</li>}
-            {vehicle_class && <li>{vehicle_class}</li>}
-            {passengers && <li>{passengers}</li>}
+            {model && <li>Model: {model}</li>}
+            {vehicle_class && <li>Class: {vehicle_class}</li>}
+            {passengers && <li>Passengers: {passengers}</li>}
 
-            {terrain && <li>{terrain}</li>}
-            {climate && <li>{climate}</li>}
-            {residents && <ul>{(residents.map(resident => {
+            {terrain && <li>Terrain: {terrain}</li>}
+            {climate && <li>Climate: {climate}</li>}
+            {residents && <ul>Residents: {(residents.map(resident => {
               return <li>{resident}</li>
               }))}</ul>}
           </ul>
-        </div>
         <footer>
-          <button className="cardButton" onClick={() => toggleFavorite(name, type)}>FAV</button>
+          <button className="cardButton" onClick={() => toggleFavorite(name, type)}><img className="faveHeart" src={Heart} alt="heart"/>FAV</button>
         </footer>
 
       </div>

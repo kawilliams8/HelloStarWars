@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import CategoryCard from './CategoryCard';
 
 describe('CategoryCard', () => {
-  const card = {name: 'Luke Skywalker', homeworld: 'Tatooine', species: 'Human', population: '200000'}
+  const card = {name: 'Luke Skywalker', homeworld: 'Tatooine', species: 'Human', population: '200000'};
   const index = 1
   it('should match the snapshot', () => {
     const wrapper= shallow(<CategoryCard 
@@ -23,7 +23,7 @@ describe('CategoryCard', () => {
   });
 
   it('should match the snapshot', ()=> {
-    const card= {model: 'Digger Crawler', class: 'wheeled', passengers: '30'}
+    const card= {model: 'Digger Crawler', class: 'wheeled', passengers: '30'};
     const index= 1;
     const wrapper= shallow(<CategoryCard 
       key={index} 
@@ -42,7 +42,7 @@ describe('CategoryCard', () => {
   });
 
   it('should match the snapshot', ()=> {
-    const card= {name: 'Hoth', terrain: 'tundra, ice cave, mountain ranges', climate: 'frozen', residents: []}
+    const card= {name: 'Hoth', terrain: 'tundra, ice cave, mountain ranges', climate: 'frozen', residents: []};
     const index= 1;
     const wrapper= shallow(<CategoryCard 
       key={index} 
