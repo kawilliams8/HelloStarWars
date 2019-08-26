@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
-import { BrowserRouter as Router, Route, NavLink , Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import './Fetch.css';
-import Home from '../Home/Home';
+// import Home from '../Home/Home';
 import PrincessLeia from '../../images/PrincessLeia.png';
 import Yoda from '../../images/Yoda.png';
 import Chewbacca from '../../images/Chewbacca.png';
@@ -113,8 +113,7 @@ countFavorites = () => {
             <NavLink to='/favorites' className="nav"><img className="buttonImages" src={Yoda} alt='Yoda' /><button>FAVORITES</button></NavLink>
           </nav>
           <Switch>
-          {/* <Route exact path='/' component={Home} /> */}
-          <Route path='/people' render={() => <CategoriesContainer data={this.state.people} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
+          <Route exact path='/people' render={() => <CategoriesContainer data={this.state.people} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />

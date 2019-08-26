@@ -12,7 +12,7 @@ h1 {
     display: grid;
     grid-template-columns: 210px 210px 210px 210px;
     grid-gap: 20px;
-    height: 80%;
+    height: 70%;
     justify-content: flex-end;
     overflow: scroll;
     padding: 50px;
@@ -20,10 +20,29 @@ h1 {
 
 .helloHeader {
     background-color: pink;
+    border-radius: 10px;
     display: flex;
+    height: 50px;
 }
 
 h3 {
     font-size: 30px;
     margin: 12px;
+}
+
+.pinkbow {
+    width: 275px;
+    position: fixed;
+    right: 30px;
+    top: 1px;
+}
+
+.fav-heart {
+    width: 20px;
+    margin-right: 0px;
+    
+}
+
+.pick-favorites {
+    margin-right: 16.5em;
 }

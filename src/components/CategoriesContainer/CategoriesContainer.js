@@ -2,6 +2,8 @@ import React from 'react';
 import '../CategoriesContainer/CategoriesContainer.css';
 import CategoryCard from '../CategoryCard/CategoryCard';
 import PropTypes from 'prop-types';
+import Bow from '../../images/Bow.png'
+import Heart from '../../images/Heart.png'
 
 const CategoriesContainer = ({ data, toggleFavorite, countFavorites }) => {
   const displayCards = data.map(card => <CategoryCard 
@@ -22,11 +24,15 @@ const CategoriesContainer = ({ data, toggleFavorite, countFavorites }) => {
 
     return (
       <div className="bow">
+          <img className="pinkbow" src={Bow} alt=""/>
         <h1>Hello Star Wars</h1>
         <header className="helloHeader">
-          <h3>Faves: {countFavorites()}</h3>
-          {(countFavorites() <1) && <h3>Add Favorites!</h3>}
-          <h3>Image</h3>
+          <h3><img className="fav-heart" src={Heart} alt= ""/> Faves: {countFavorites()}</h3>
+          {(countFavorites() <1) && <h3 className="pick-favorites"><img className="fav-heart" src={Heart} alt= ""/> Select Your Favorites!</h3>}
+          <p></p>
+          {/* <p></p>
+          <p></p> */}
+
         </header>
         <article className= "categoriesContainer">
           {displayCards}

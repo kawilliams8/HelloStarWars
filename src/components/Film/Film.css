@@ -8,9 +8,9 @@
 .filmContainer {
   display: flex;
   justify-content: center;
-  height: 800px;
+  height: 100%;
   perspective: 600px; /* alllows us to transfrom the text 3D, from how wide it comes from the z-angle */
-  color: white;
+  color: Lemonchiffon;
   font-size: 300%;
   font-family: 'Dunkin';
   letter-spacing: 6px;
