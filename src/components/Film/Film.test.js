@@ -7,6 +7,4 @@ describe('Film', () => {
     const wrapper= shallow(<Film/>)
     expect(wrapper).toMatchSnapshot()
   });
-
-  //Needs a test to check that the fetch is updating state
 });

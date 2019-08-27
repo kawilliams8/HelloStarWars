@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import Fetch from './Fetch';
 import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
+import NoMatch from '../NoMatch/NoMatch'
 
   describe('Fetch routes using memory router', () => {
     it('should show Fetch component for / router (using memory router)', () => {
@@ -21,7 +22,7 @@ import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
       expect(component.find(CategoriesContainer)).toHaveLength(1);
     });
 
-    it('should show a CategoriesContainer component for /people router', () => {
+    it('should show a CategoriesContainer component for /vehicles router', () => {
       const mockVehicleData = [{ name: 'Sand Crawler' }, { name: 'Snowspeeder' }]
       const component = mount(<MemoryRouter initialEntries={['/people']}>
         <CategoriesContainer countFavorites={jest.fn()} data={mockVehicleData} />
@@ -29,7 +30,7 @@ import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
       expect(component.find(CategoriesContainer)).toHaveLength(1);
     });
 
-    it('should show a CategoriesContainer component for /people router', () => {
+    it('should show a CategoriesContainer component for /planets router', () => {
       const mockPlanetData = [{ name: 'Hoth' }, { name: 'Endor' }]
       const component = mount(<MemoryRouter initialEntries={['/people']}>
         <CategoriesContainer countFavorites={jest.fn()} data={mockPlanetData} />
@@ -37,12 +38,18 @@ import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
       expect(component.find(CategoriesContainer)).toHaveLength(1);
     });
 
-    it('should show a CategoriesContainer component for /people router', () => {
+    it('should show a CategoriesContainer component for /favorites router', () => {
       const mockFavoritesData = [{ name: 'Hoth' }, { name: 'Luke Skywalker' }]
       const component = mount(<MemoryRouter initialEntries={['/people']}>
         <CategoriesContainer countFavorites={jest.fn()} data={mockFavoritesData} />
       </MemoryRouter>)
       expect(component.find(CategoriesContainer)).toHaveLength(1);
+    });
+    it('should show a NoMatch component for route not defined', () => {
+      const component = mount(<MemoryRouter initialEntries={['/abc']}>
+        <Fetch checkLoading={jest.fn()}/>
+      </MemoryRouter>)
+      expect(component.find(NoMatch)).toHaveLength(1);
     });
 
     it('should match snapshot', () => {
@@ -58,5 +65,6 @@ import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
       wrapper.instance().toggleFavorite("Luke Skywalker", "people");
       expect(wrapper.state('favorites')).toEqual(expected);
     });
+    
 
   });

@@ -6,6 +6,7 @@ import PrincessLeia from '../../images/PrincessLeia.png';
 import Yoda from '../../images/Yoda.png';
 import Chewbacca from '../../images/Chewbacca.png';
 import DeathStar from '../../images/DeathStar.png';
+import NoMatch from '../NoMatch/NoMatch'
 
 class Fetch extends Component {
   constructor(props) {
@@ -115,6 +116,7 @@ class Fetch extends Component {
           <Route path='/vehicles' render={() => <CategoriesContainer data={this.state.vehicles} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/planets' render={() => <CategoriesContainer data={this.state.planets} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
           <Route path='/favorites' render={() => <CategoriesContainer data={this.state.favorites} toggleFavorite={this.toggleFavorite} countFavorites={this.countFavorites}/>} />
+          <Route component={NoMatch}/>
           </Switch>
         </Router>
       </>

@@ -16,7 +16,7 @@ class App extends Component {
   checkLoading = () => {
     setTimeout(() => {
       this.setState({isLoading: false})
-    }, 7000)
+    }, 5000)
   }
 
   render() {

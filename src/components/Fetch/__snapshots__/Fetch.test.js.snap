@@ -77,6 +77,9 @@ exports[`Fetch routes using memory router should match snapshot 1`] = `
         path="/favorites"
         render={[Function]}
       />
+      <Route
+        component={[Function]}
+      />
     </Switch>
   </BrowserRouter>
 </Fragment>
