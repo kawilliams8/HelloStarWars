@@ -34,6 +34,7 @@ describe('CategoriesContainer', () => {
     const wrapper1 = shallow(<Fetch checkLoading={jest.fn()} />);
     const wrapper2 = shallow(<CategoriesContainer data={mockFavoritesData} toggleFavorite={jest.fn()} countFavorites={mockCountFavorites} />);
     wrapper1.setState({ favorites: mockFavoritesData })
+
     expect(mockCountFavorites).toHaveBeenCalled();
   });
 

@@ -6,7 +6,9 @@ import PrincessLeia from '../../images/PrincessLeia.png';
 import Yoda from '../../images/Yoda.png';
 import Chewbacca from '../../images/Chewbacca.png';
 import DeathStar from '../../images/DeathStar.png';
-import NoMatch from '../NoMatch/NoMatch'
+import { getVehicles, getPlanets } from '../../apiCalls';
+
+import NoMatch from '../NoMatch/NoMatch';
 
 class Fetch extends Component {
   constructor(props) {
@@ -20,7 +22,6 @@ class Fetch extends Component {
     }
   }
   
-  
   componentDidMount() {
     fetch('https://swapi.co/api/people/')
     .then(response => response.json())
@@ -31,14 +32,12 @@ class Fetch extends Component {
       this.checkLoading()})
     .catch(error => console.log(error));
 
-    fetch('https://swapi.co/api/planets/')
-    .then(response => response.json())
+    getPlanets()
     .then(data => this.fetchResidents(data.results))
       .then(result => this.setState({ planets: result }))
     .catch(error => console.log(error))
 
-    fetch('https://swapi.co/api/vehicles/')
-    .then(response => response.json())
+    getVehicles()
     .then(response => response.results.map(item => {
       return {...item, type: "vehicles"}}))
     .then(result => this.setState({vehicles : result}))
