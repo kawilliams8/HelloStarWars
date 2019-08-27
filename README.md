@@ -43,3 +43,4 @@ Then navigate your browser to:
 - Illustrator
 - HTML
 - CSS
+- [Trello](https://trello.com/b/Z5EEBUMz/swapi-wapi)
