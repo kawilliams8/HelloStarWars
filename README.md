@@ -1,6 +1,6 @@
 # Hello Star Wars
 
-Hello Star Wars is a two week paired project for Front End Engineering students in Module 3 at the Turing School of Software & Design. Students learn how to set up multiple fetch calls to a Star Wars data api, manage the chain of returned promise objects, and use the resulting data in a React web app. No comp is provided; all design elements were created by the team, from scratch, using Adobe Illustrator. The authors selected a Star Wars / Hello Kitty crossover theme.
+Hello Star Wars is a two week paired project for Front End Engineering students in Module 3 at the Turing School of Software & Design. Students learn how to set up multiple fetch calls to a Star Wars data api, manage the chain of returned promise objects, and use the resulting data in a React web app. No comp is provided; all design elements were created by the team, from scratch, using Adobe Illustrator. The authors selected a Star Wars / Hello Kitty crossover theme and wireframed the layout with Adobe XD.
 
 Hello Star Wars, also known as 'Swapi-Box', is the first project in Module 2 to test changes to state, React Router, ASYNC functionality, propTypes and JSX snapshots.
 
@@ -16,7 +16,7 @@ This project was built with the create-react-app starter kit. All tests are exec
 ## Wireframes
 
 ![Loading Screen](https://github.com/Jessiewithani/Swapi-Box/blob/master/Wireframe_1.png)
-1[Card Container](https://github.com/Jessiewithani/Swapi-Box/blob/master/Wireframe_2.png)
+![Card Container](https://github.com/Jessiewithani/Swapi-Box/blob/master/Wireframe_2.png)
 
 ## Project Installation
 Clone down the repo in your terminal.
@@ -45,6 +45,7 @@ Then navigate your browser to:
 - PropTypes
 - Jest
 - Enzyme
+- Adobe XD
 - Illustrator
 - HTML
 - CSS
