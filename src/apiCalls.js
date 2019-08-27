@@ -35,3 +35,21 @@ export const getPeople = () => {
     throw Error(error.message);
   })
 };
+
+export const getSpecies = (people) => {
+  const promises = people.results.map(person => {
+    return fetch(person.species)
+    .then(response => {
+      if(!response.ok) {
+        throw Error('error')
+      }
+      return response.json()
+    })
+    // .then(response => response.json())
+    .then(data => ({...person, species: data.name, type: "people"}))
+    .catch(error => {
+      throw Error(error.message)
+    })
+  })
+  return Promise.all(promises)
+};

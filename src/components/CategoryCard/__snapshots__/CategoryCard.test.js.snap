@@ -24,12 +24,12 @@ exports[`CategoryCard should match the snapshot 1`] = `
       className="cardList"
     >
       <li>
-        Homeworld: 
-        Tatooine
-      </li>
-      <li>
         Species: 
         Human
+      </li>
+      <li>
+        Homeworld: 
+        Tatooine
       </li>
       <li>
         Population: 

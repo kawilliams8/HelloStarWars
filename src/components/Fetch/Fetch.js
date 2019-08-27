@@ -6,7 +6,7 @@ import PrincessLeia from '../../images/PrincessLeia.png';
 import Yoda from '../../images/Yoda.png';
 import Chewbacca from '../../images/Chewbacca.png';
 import DeathStar from '../../images/DeathStar.png';
-import { getVehicles, getPlanets, getPeople} from '../../apiCalls';
+import { getVehicles, getPlanets, getPeople, getSpecies} from '../../apiCalls';
 
 import NoMatch from '../NoMatch/NoMatch';
 
@@ -54,13 +54,8 @@ class Fetch extends Component {
   }
 
   fetchPlanets(people) {
-    const promises = people.map(person => {
-      return fetch(person.homeworld)
-        .then(response => response.json())
-        .then(data => ({...person, homeworld: data.name, population: data.population}))
-        .catch(error => console.log(error))
-    });
-    return Promise.all(promises);
+    console.log('people', people)
+    return getSpecies(people);
   }
 
   fetchResidents(data) {

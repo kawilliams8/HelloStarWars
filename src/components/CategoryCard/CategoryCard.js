@@ -21,7 +21,6 @@ const CategoryCard = ( props ) => {
             {species && <li>Species: {species}</li>}
             {homeworld && <li>Homeworld: {homeworld}</li>}
             {population && <li>Population: {population}</li>}
-
             {model && <li>Model: {model}</li>}
             {vehicle_class && <li>Class: {vehicle_class}</li>}
             {passengers && <li>Passengers: {passengers}</li>}

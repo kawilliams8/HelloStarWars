@@ -1,4 +1,4 @@
-import { getVehicles, getPlanets, getPeople} from './apiCalls';
+import { getVehicles, getPlanets, getPeople, getSpecies} from './apiCalls';
 
 describe('getVehicles', () => {
 
