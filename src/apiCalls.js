@@ -37,7 +37,10 @@ export const getPeople = () => {
 };
 
 export const getSpecies = (people) => {
-  const promises = people.results.map(person => {
+  console.log('api peeps', people)
+  const promises = people.map(person => {
+    console.log('peopleresults', people)
+    console.log('api-person', person)
     return fetch(person.species)
     .then(response => {
       if(!response.ok) {
