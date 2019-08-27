@@ -13,6 +13,11 @@ This project was built with the create-react-app starter kit. All tests are exec
 
 //screenshots here
 
+## Wireframes
+
+![Loading Screen](https://github.com/Jessiewithani/Swapi-Box/blob/master/Wireframe_1.png)
+1[Card Container](https://github.com/Jessiewithani/Swapi-Box/blob/master/Wireframe_2.png)
+
 ## Project Installation
 Clone down the repo in your terminal.
 
