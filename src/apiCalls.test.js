@@ -1,4 +1,4 @@
-import { getVehicles, getPlanets} from './apiCalls';
+import { getVehicles, getPlanets, getPeople} from './apiCalls';
 
 describe('getVehicles', () => {
 
@@ -98,3 +98,53 @@ describe('getPlanets', () => {
     expect(getPlanets()).rejects.toEqual(Error('Fetching Error'));
   });
 });
+
+describe('People', () => {
+
+  let mockPeople;
+
+  beforeEach(() => {
+    mockPeople = [{
+      name: "Luke Skywalker",
+      homeworld: 'Tatooine',
+      species: "human",
+      population: 200000,
+    }];
+
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockPeople)
+      })
+    })
+  });
+
+  it('should call fetch with the correct URL', () => {
+    getPeople();
+    expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/people/')
+  });
+
+  it('should return an array of people', () => {
+    expect(getPeople()).resolves.toEqual(mockPeople);
+  });
+
+  it('should show an error when the fetch Promise returns rejected', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false,
+      });
+    });
+
+    expect(getPeople()).rejects.toEqual(Error('Fetching Error'));
+  });
+
+  it('should show an error when the fetch Promise returns rejected', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        message: 'Fetching Error'
+      });
+    });
+
+    expect(getPeople()).rejects.toEqual(Error('Fetching Error'));
+  });
+})

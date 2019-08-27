@@ -6,7 +6,7 @@ import PrincessLeia from '../../images/PrincessLeia.png';
 import Yoda from '../../images/Yoda.png';
 import Chewbacca from '../../images/Chewbacca.png';
 import DeathStar from '../../images/DeathStar.png';
-import { getVehicles, getPlanets } from '../../apiCalls';
+import { getVehicles, getPlanets, getPeople} from '../../apiCalls';
 
 import NoMatch from '../NoMatch/NoMatch';
 
@@ -23,8 +23,7 @@ class Fetch extends Component {
   }
   
   componentDidMount() {
-    fetch('https://swapi.co/api/people/')
-    .then(response => response.json())
+    getPeople()
     .then(data1 => this.fetchSpecies(data1))
     .then(data2 => this.fetchPlanets(data2))
     .then(result => {

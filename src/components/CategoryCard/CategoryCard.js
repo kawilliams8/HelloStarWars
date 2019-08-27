@@ -18,8 +18,8 @@ const CategoryCard = ( props ) => {
         </header>
         <div className="list-container">
           <ul className="cardList">
-            {homeworld && <li>Homeworld: {homeworld}</li>}
             {species && <li>Species: {species}</li>}
+            {homeworld && <li>Homeworld: {homeworld}</li>}
             {population && <li>Population: {population}</li>}
 
             {model && <li>Model: {model}</li>}

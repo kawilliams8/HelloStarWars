@@ -21,3 +21,17 @@ export const getPlanets = () => {
       throw Error(error.message);
     });
 };
+
+export const getPeople = () => {
+  return fetch('https://swapi.co/api/people/')
+  .then(response => {
+    console.log(response)
+    if(!response.ok) {
+      throw Error('Error')
+    } 
+    return response.json()
+  })
+  .catch(error => {
+    throw Error(error.message);
+  })
+};
