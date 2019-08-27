@@ -1,6 +1,7 @@
 .navContainer {
   width: 20%;
   justify-content: flex-start;
+  padding-top: 45px;
 }
 
 .buttonImages {
