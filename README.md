@@ -11,7 +11,7 @@ This project was built with the create-react-app starter kit. All tests are exec
 
 ## Results
 
-//screenshots here
+![Film Crawl](https://github.com/Jessiewithani/Swapi-Box/blob/master/src/images/Hello-Kitty-Crawl.gif)
 
 ## Wireframes
 
