@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hello Star Wars
 
-## Available Scripts
+Hello Star Wars is a two week paired project for Front End Engineering students in Module 3 at the Turing School of Software & Design. Students learn how to set up multiple fetch calls to a Star Wars data api, manage the chain of returned promise objects, and use the resulting data in a React web app. No comp is provided; all design elements were created by the team, from scratch, using Adobe Illustrator. The authors selected a Star Wars / Hello Kitty crossover theme.
 
-In the project directory, you can run:
+Hello Star Wars, also known as 'Swapi-Box', is the first project in Module 2 to test changes to state, React Router, ASYNC functionality, propTypes and JSX snapshots.
 
-### `npm start`
+This project was built with the create-react-app starter kit. All tests are executed by Jest and Enzyme. The project challenges students to follow Object Oriented Programming, Test Driven Development, and Single Responsibility principles. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Authors
+* Katherine Williams ([kawilliams8](https://github.com/kawilliams8)) and Jessie Le-Ho ([Jessiewithani](https://github.com/Jessiewithani));
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Results
 
-### `npm test`
+//screenshots here
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Installation
+Clone down the repo in your terminal.
 
-### `npm run build`
+```bash
+git clone
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once you have cloned the repo, install dependencies by running:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```bash
+NPM install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To see the Hello Star Wars app, run:
 
-### `npm run eject`
+`npm start` 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Then navigate your browser to: 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`http://localhost:3000/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Built With
+- React
+- React Router
+- PropTypes
+- Jest
+- Enzyme
+- Illustrator
+- HTML
+- CSS
