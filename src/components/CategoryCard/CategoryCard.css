@@ -6,8 +6,7 @@
     flex-direction: column;
     font-family: 'Dunkin';
     padding-bottom: 10px;
-    height: 250px;
-    overflow: scroll;
+    height: 225px;
 }
 
 .cardTitle {
@@ -24,8 +23,13 @@ img {
     padding-left: 10px;
 }
 
+.list-container {
+    height: 200px;
+    overflow: scroll;
+}
+
 footer {
-    display: inline-block;
+    display: block;
 }
 
 .faveHeart {
