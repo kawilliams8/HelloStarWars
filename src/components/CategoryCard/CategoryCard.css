@@ -5,6 +5,9 @@
     display: flex;
     flex-direction: column;
     font-family: 'Dunkin';
+    padding-bottom: 10px;
+    height: 250px;
+    overflow: scroll;
 }
 
 .cardTitle {
@@ -35,4 +38,15 @@ header,
 ul, 
 footer {
     justify-content: space-between;
+}
+
+.cardButton {
+    border-radius: 8px;
+    display: block;
+    font-family: 'Dunkin';
+    color: #FF0075;
+    font-size: 18px;
+    height: 30px;
+    margin: 5px auto;
+    width: 70%;
 }
