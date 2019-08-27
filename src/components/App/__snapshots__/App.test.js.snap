@@ -1,13 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should match the snapshot 1`] = `
-<main
-  className="App"
->
-  <h1>
-    Swapi Box
-  </h1>
-  <Fetch />
-  <Film />
-</main>
+<Fragment>
+  <main
+    className="App"
+  >
+    <Fetch
+      checkLoading={[Function]}
+    />
+    <Film />
+  </main>
+</Fragment>
 `;

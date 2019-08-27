@@ -31,10 +31,10 @@ h3 {
 }
 
 .pinkbow {
-    width: 275px;
+    width: 300px;
     position: fixed;
     right: 30px;
-    top: 1px;
+    top: -15px;
 }
 
 .fav-heart {

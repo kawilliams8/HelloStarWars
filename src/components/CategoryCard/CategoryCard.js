@@ -14,7 +14,7 @@ const CategoryCard = ( props ) => {
     return (
       <div className="card">
         <header>
-          <h3 className="cardTitle"><img classname="star" src={Star} alt="star" height="21"/>{name}</h3>
+          <h3 className="cardTitle"><img className="star" src={Star} alt="star" height="21"/>{name}</h3>
         </header>
           <ul className="cardList">
             {homeworld && <li>Homeworld: {homeworld}</li>}
@@ -34,7 +34,6 @@ const CategoryCard = ( props ) => {
         <footer>
           <button className="cardButton" onClick={() => toggleFavorite(name, type)}><img className="faveHeart" src={Heart} alt="heart"/>FAV</button>
         </footer>
-
       </div>
     )
 }

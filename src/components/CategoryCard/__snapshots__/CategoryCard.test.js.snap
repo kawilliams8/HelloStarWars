@@ -5,25 +5,44 @@ exports[`CategoryCard should match the snapshot 1`] = `
   className="card"
 >
   <header>
-    <h3>
+    <h3
+      className="cardTitle"
+    >
+      <img
+        alt="star"
+        className="star"
+        height="21"
+        src="Star.png"
+      />
       Luke Skywalker
     </h3>
   </header>
-  <ul>
+  <ul
+    className="cardList"
+  >
     <li>
+      Homeworld: 
       Tatooine
     </li>
     <li>
+      Species: 
       Human
     </li>
     <li>
+      Population: 
       200000
     </li>
   </ul>
   <footer>
     <button
+      className="cardButton"
       onClick={[Function]}
     >
+      <img
+        alt="heart"
+        className="faveHeart"
+        src="Heart.png"
+      />
       FAV
     </button>
   </footer>
@@ -35,20 +54,39 @@ exports[`CategoryCard should match the snapshot 2`] = `
   className="card"
 >
   <header>
-    <h3 />
+    <h3
+      className="cardTitle"
+    >
+      <img
+        alt="star"
+        className="star"
+        height="21"
+        src="Star.png"
+      />
+    </h3>
   </header>
-  <ul>
+  <ul
+    className="cardList"
+  >
     <li>
+      Model: 
       Digger Crawler
     </li>
     <li>
+      Passengers: 
       30
     </li>
   </ul>
   <footer>
     <button
+      className="cardButton"
       onClick={[Function]}
     >
+      <img
+        alt="heart"
+        className="faveHeart"
+        src="Heart.png"
+      />
       FAV
     </button>
   </footer>
@@ -60,22 +98,40 @@ exports[`CategoryCard should match the snapshot 3`] = `
   className="card"
 >
   <header>
-    <h3>
+    <h3
+      className="cardTitle"
+    >
+      <img
+        alt="star"
+        className="star"
+        height="21"
+        src="Star.png"
+      />
       Hoth
     </h3>
   </header>
-  <ul>
+  <ul
+    className="cardList"
+  >
     <li>
+      Terrain: 
       tundra, ice cave, mountain ranges
     </li>
     <li>
+      Climate: 
       frozen
     </li>
   </ul>
   <footer>
     <button
+      className="cardButton"
       onClick={[Function]}
     >
+      <img
+        alt="heart"
+        className="faveHeart"
+        src="Heart.png"
+      />
       FAV
     </button>
   </footer>

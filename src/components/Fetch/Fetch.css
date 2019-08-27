@@ -21,5 +21,6 @@ button {
 }
 
 button:hover {
+  border: 2px solid pink;
   color: #72C676;
 }

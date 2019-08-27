@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import CategoriesContainer from '../CategoriesContainer/CategoriesContainer';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import './Fetch.css';
-// import Home from '../Home/Home';
 import PrincessLeia from '../../images/PrincessLeia.png';
 import Yoda from '../../images/Yoda.png';
 import Chewbacca from '../../images/Chewbacca.png';
@@ -11,16 +10,16 @@ import DeathStar from '../../images/DeathStar.png';
 class Fetch extends Component {
   constructor(props) {
     super(props)
-    const {checkLoading} = props
+    const {checkLoading} = props;
     this.state = {
       people: [],
       vehicles : [],
       planets: [],
       favorites: []
     }
-    this.checkLoading = checkLoading.bind(this);
   }
-
+  
+  
   componentDidMount() {
     fetch('https://swapi.co/api/people/')
     .then(response => response.json())
@@ -97,16 +96,15 @@ class Fetch extends Component {
     }
   }
 
-countFavorites = () => {
-  return this.state.favorites.length;
-}
+  countFavorites = () => {
+    return this.state.favorites.length;
+  }
 
   render() {
     return (
       <>
         <Router>
           <nav className="navContainer">
-            {/* <NavLink to="/" className="nav"><button>HOME</button></NavLink> */}
             <NavLink to="/people" className="nav"><img className="buttonImages" src={PrincessLeia} alt='Princess Leia' /><button>PEOPLE</button></NavLink>
             <NavLink to="/vehicles" className="nav"><img className="buttonImages" src={Chewbacca} alt='Chewbacca' /><button>VEHICLES</button></NavLink>
             <NavLink to="/planets" className="nav"><img className="buttonImages" src={DeathStar} alt='DeathStar' /><button>PLANETS</button></NavLink>

@@ -10,6 +10,11 @@ exports[`Fetch routes using memory router should match snapshot 1`] = `
         className="nav"
         to="/people"
       >
+        <img
+          alt="Princess Leia"
+          className="buttonImages"
+          src="PrincessLeia.png"
+        />
         <button>
           PEOPLE
         </button>
@@ -18,6 +23,11 @@ exports[`Fetch routes using memory router should match snapshot 1`] = `
         className="nav"
         to="/vehicles"
       >
+        <img
+          alt="Chewbacca"
+          className="buttonImages"
+          src="Chewbacca.png"
+        />
         <button>
           VEHICLES
         </button>
@@ -26,6 +36,11 @@ exports[`Fetch routes using memory router should match snapshot 1`] = `
         className="nav"
         to="/planets"
       >
+        <img
+          alt="DeathStar"
+          className="buttonImages"
+          src="DeathStar.png"
+        />
         <button>
           PLANETS
         </button>
@@ -34,28 +49,35 @@ exports[`Fetch routes using memory router should match snapshot 1`] = `
         className="nav"
         to="/favorites"
       >
+        <img
+          alt="Yoda"
+          className="buttonImages"
+          src="Yoda.png"
+        />
         <button>
           FAVORITES
         </button>
       </NavLink>
     </nav>
-    <Route
-      exact={true}
-      path="/people"
-      render={[Function]}
-    />
-    <Route
-      path="/vehicles"
-      render={[Function]}
-    />
-    <Route
-      path="/planets"
-      render={[Function]}
-    />
-    <Route
-      path="/favorites"
-      render={[Function]}
-    />
+    <Switch>
+      <Route
+        exact={true}
+        path="/people"
+        render={[Function]}
+      />
+      <Route
+        path="/vehicles"
+        render={[Function]}
+      />
+      <Route
+        path="/planets"
+        render={[Function]}
+      />
+      <Route
+        path="/favorites"
+        render={[Function]}
+      />
+    </Switch>
   </BrowserRouter>
 </Fragment>
 `;
