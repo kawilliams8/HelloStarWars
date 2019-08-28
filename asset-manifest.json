@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/HelloStarWars/static/css/main.e02c3836.chunk.css",
+    "main.js": "/HelloStarWars/static/js/main.c049a3d4.chunk.js",
+    "main.js.map": "/HelloStarWars/static/js/main.c049a3d4.chunk.js.map",
+    "runtime~main.js": "/HelloStarWars/static/js/runtime~main.b56d52e9.js",
+    "runtime~main.js.map": "/HelloStarWars/static/js/runtime~main.b56d52e9.js.map",
+    "static/js/2.90159d41.chunk.js": "/HelloStarWars/static/js/2.90159d41.chunk.js",
+    "static/js/2.90159d41.chunk.js.map": "/HelloStarWars/static/js/2.90159d41.chunk.js.map",
+    "index.html": "/HelloStarWars/index.html",
+    "precache-manifest.955fb2385a5cffed27902a1d43e0d574.js": "/HelloStarWars/precache-manifest.955fb2385a5cffed27902a1d43e0d574.js",
+    "service-worker.js": "/HelloStarWars/service-worker.js",
+    "static/css/main.e02c3836.chunk.css.map": "/HelloStarWars/static/css/main.e02c3836.chunk.css.map",
+    "static/media/Bow.png": "/HelloStarWars/static/media/Bow.f2540fbc.png",
+    "static/media/Chewbacca.png": "/HelloStarWars/static/media/Chewbacca.d8508161.png",
+    "static/media/DeathStar.png": "/HelloStarWars/static/media/DeathStar.8fe72e1f.png",
+    "static/media/index.css": "/HelloStarWars/static/media/Japan.ccc49bf0.ttf",
+    "static/media/Heart.png": "/HelloStarWars/static/media/Heart.6c00b899.png",
+    "static/media/PrincessLeia.png": "/HelloStarWars/static/media/PrincessLeia.0ff427b7.png",
+    "static/media/Star.png": "/HelloStarWars/static/media/Star.3373df6b.png",
+    "static/media/Yoda.png": "/HelloStarWars/static/media/Yoda.5bd4866e.png",
+    "static/media/App.css": "/HelloStarWars/static/media/galaxy.b07fc198.jpg"
+  }
+}
