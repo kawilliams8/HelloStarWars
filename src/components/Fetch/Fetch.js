@@ -13,6 +13,7 @@ import NoMatch from '../NoMatch/NoMatch';
 class Fetch extends Component {
   constructor(props) {
     super(props)
+    // eslint-disable-next-line
     const {checkLoading} = props;
     this.state = {
       people: [],
